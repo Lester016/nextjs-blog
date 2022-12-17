@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
@@ -9,7 +9,12 @@ import Image from "next/image";
 const name = "Kratos & Atreus";
 export const siteTitle = "Next.js Sample Website";
 
-const Layout = ({ children, home }) => {
+interface Layout {
+  children: ReactNode;
+  home?: boolean;
+}
+
+const Layout = ({ children, home }: Layout) => {
   return (
     <div className={styles.container}>
       <Head>
